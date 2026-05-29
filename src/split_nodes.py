@@ -46,6 +46,7 @@ def split_nodes_link(old_nodes: list[TextNode]) -> list[TextNode]:
         links = extract_markdown_links(original_text)
         if len(links) == 0:
             new_list.append(node)
+            continue
         
         for link in links:
             sections = original_text.split(f"[{link[0]}]({link[1]})")

@@ -1,7 +1,8 @@
-from textnode import TextNode, TextType
+from source_transfer import static_to_public
+from extract_markdown import extract_title
+from page_generator import generate_pages_recursive
 
 def Main():
-    text_node = TextNode("This is some anchor text", TextType.TEXT_LINK, "https://www.boot.dev")
-    print(text_node)
-
+    static_to_public()
+    generate_pages_recursive("./content", "./template.html", "./public")
 Main()
