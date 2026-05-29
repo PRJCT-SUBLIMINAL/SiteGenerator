@@ -16,5 +16,6 @@ def copy_recursive(src, dst):
     
 
 def static_to_public():
-    shutil.rmtree("./public")
-    copy_recursive("./static", "./public")
+    if os.path.exists("./docs"):
+        shutil.rmtree("./docs")
+    copy_recursive("./static", "./docs")
